@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}Car Database{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<p class="important">
+<h1>animals Database</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Origin</th>
+            <th>Pic</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for animal in animals %}
+        <tr>
+            <td>{{ animal[0] }}</td>
+            <td>{{ animal[1] }}</td>
+            <td>{{ animal[2] }}</td>
+            <td>{{ animal[3] }}</td>
+            <td>{{ animal[4] }}</td>
+            <td><a href="{{ url_for('delete_animal', animal_id=animal[0]) }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <nav>
+{% endblock %}

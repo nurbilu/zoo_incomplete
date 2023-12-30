@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}Update animal{% endblock %}
+
+{% block content %}
+    <h1>Update animal Information</h1>
+    <form method="post">
+        <label for="name">name:</label>
+        <input type="text" id="name" name="name" value="{{ animal.name }}" required><br>
+        
+        <label for="age">age:</label>
+        <input type="number" id="age" name="age" value="{{ animal.age }}" required><br>
+        
+        <label for="origin">origin:</label>
+        <input type="text" id="origin" name="origin" value="{{ animal.origin }}" required><br>
+        
+        <label for="picture">picture:</label>
+        <input type="text" id="picture" name="picture" value="{{ animal.picture }}" required><br>
+        
+        <input type="submit" value="Update">
+    </form>
+{% endblock %}
+
+</html>
